@@ -108,7 +108,7 @@ def get_eval(eval_id, skip_existing_tag = false)
   rewrite("dist/install") do |body|
     body.gsub(
       "url=https://releases.nixos.org/nix/",
-      "url=https://github.com/#{ENV.fetch('GITHUB_REPOSITORY', 'numtide/nix-unstable-installer')}/releases/download/"
+      "url=https://github.com/#{ENV.fetch('GITHUB_REPOSITORY', 'miuirussia/nix-unstable-installer')}/releases/download/"
     )
   end
 
