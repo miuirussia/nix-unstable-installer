@@ -64,7 +64,12 @@ def get_eval(eval_id, skip_existing_tag = false)
     data = fetch_json("https://hydra.nixos.org/build/#{build_id}")
     job = data["job"]
 
-    if data["finished"] == 1 && data["buildstatus"] > 0
+    if data["finished"] != 1
+      puts "evaluation #{eval_id} not finished"
+      return :unfinished
+    end
+
+    if data["buildstatus"] > 0
       puts "evaluation #{eval_id} has failed jobs"
       return :failure
     end
@@ -153,7 +158,7 @@ def main(eval_id)
       # Get evaluation details
       eval_result = get_eval(eval_id, skip_existing_result = true)
       case eval_result
-      when :failure
+      when :failure, :unfinished
         eval_idx += 1
         next
       when :skip
