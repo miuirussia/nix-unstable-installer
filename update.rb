@@ -64,7 +64,7 @@ def get_eval(eval_id, skip_existing_tag = false)
     data = fetch_json("https://hydra.nixos.org/build/#{build_id}")
     job = data["job"]
 
-    if data["finished"] != 1
+    if data["buildstatus"].nil?
       puts "evaluation #{eval_id} not finished"
       return :unfinished
     end
