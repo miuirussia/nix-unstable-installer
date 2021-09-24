@@ -69,7 +69,7 @@ def get_eval(eval_id, skip_existing_tag = false)
       return :unfinished
     end
 
-    if data["buildstatus"] > 0
+    if dist_jobs.include?(job) && data["buildstatus"] > 0
       puts "evaluation #{eval_id} has failed jobs"
       return :failure
     end
