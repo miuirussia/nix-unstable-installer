@@ -9,15 +9,15 @@ script so that it fetches them from GitHub instead.
 
 ## Latest release
 
-* Release: `nix-2.6.0pre20220124_076945c`
-* Hydra eval: https://hydra.nixos.org/eval/1740059
+* Release: `nix-2.7.0pre20220125_a04a66c`
+* Hydra eval: https://hydra.nixos.org/eval/1740308
 
 ## Usage
 
 ### Systems
 
 ```sh
-sh <(curl -L https://github.com/miuirussia/nix-unstable-installer/releases/download/nix-2.6.0pre20220124_076945c/install)
+sh <(curl -L https://github.com/miuirussia/nix-unstable-installer/releases/download/nix-2.7.0pre20220125_a04a66c/install)
 ```
 
 ### GitHub Actions
@@ -36,7 +36,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: cachix/install-nix-action@v14
       with:
-        install_url: https://github.com/miuirussia/nix-unstable-installer/releases/download/nix-2.6.0pre20220124_076945c/install
+        install_url: https://github.com/miuirussia/nix-unstable-installer/releases/download/nix-2.7.0pre20220125_a04a66c/install
         # Configure Nix to enable flakes
         extra_nix_config: |
           experimental-features = nix-command flakes
