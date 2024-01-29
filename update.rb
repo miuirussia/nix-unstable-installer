@@ -106,7 +106,7 @@ def get_eval(eval_id, skip_existing_tag = false)
   # Skip existing tags
   if release_name.nil?
     puts "failed to get release_name"
-    return :skip
+    return :failure
   end
   
   tag_exists = system("git", "show-ref", "--tags", release_name, "--quiet")
