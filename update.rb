@@ -133,7 +133,7 @@ def get_eval(eval_id, skip_existing_tag = false)
   end
 
   server_url = ENV.fetch('GITHUB_SERVER_URL', 'https://github.com')
-  repository = ENV.fetch('GITHUB_REPOSITORY', 'nix-community/nix-unstable-installer')
+  repository = ENV.fetch('GITHUB_REPOSITORY', 'miuirussia/nix-unstable-installer')
 
   # Rewrite the installer
   rewrite("dist/install") do |body|
