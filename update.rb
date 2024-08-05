@@ -178,9 +178,9 @@ def main(eval_id)
     evals_checked = 0
     while release_name.nil?
       # Give up when too many evals have been tried
-      if evals_checked > 60
-        raise "error finding latest successful evaluation: too many evaluations checked"
-      end
+      # if evals_checked > 60
+      #  raise "error finding latest successful evaluation: too many evaluations checked"
+      # end
 
       # Implement Hydra pagination
       if eval_idx >= latest["evals"].length
